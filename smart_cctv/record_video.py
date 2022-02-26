@@ -20,7 +20,7 @@ def record():
     minute = t.minute
     second = t.second
     # output video writer creation
-    out = cv2.VideoWriter('recordedvid' + str(hrs) + str(minute) + str(second) + '.avi',
+    out = cv2.VideoWriter('recorded-vid' + str(hrs) + str(minute) + str(second) + '.avi',
                           fourcc, fps, (int(width), int(height)))
     print("Frames are {}".format(fps))
     # Showing and storing the live camera feed
@@ -32,7 +32,7 @@ def record():
             ret, frame = cap.read()
             # return ret Variable tells if the frame is returned successfully
             if ret:
-                cv2.imshow('winname', frame)
+                cv2.imshow('win-name', frame)
                 # Writing the frame to video output
                 out.write(frame)
                 # Wait for 2 milliseconds for each frame
